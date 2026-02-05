@@ -21,10 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int speed; // bu da public yapmadan fieldýn ekranda görünmesini saðlar
     [SerializeField] int egim;
 
+    AudioSource audioPlayer;
+
     private void Start()
     {
         physic = this.GetComponent<Rigidbody>();
-        
+        audioPlayer = this.GetComponent<AudioSource>(); 
     }
 
     void Update()
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             Instantiate(shoot, shootSpawn.transform.position, shootSpawn.transform.rotation);
+            audioPlayer.Play();
         }
         
     }

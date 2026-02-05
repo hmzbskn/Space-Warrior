@@ -3,7 +3,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     Rigidbody physic;
-    [SerializeField] int boltSpeed;
+    public int boltSpeed;
     void Start()
     {
         physic = GetComponent<Rigidbody>();
